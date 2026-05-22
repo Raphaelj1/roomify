@@ -95,7 +95,7 @@ const VisualizerId = () => {
 							<img src={currentImage} alt="AI Render" className="render-img" />
 						) : (
 							<div className="render-placeholder">
-								{initialRender && (
+								{initialImage && (
 									<img
 										src={initialImage}
 										alt="Original"
