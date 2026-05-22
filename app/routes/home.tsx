@@ -39,7 +39,7 @@ export default function Home() {
 		navigate(`visualizer/${newId}`, {
 			state: {
 				initialImage: saved.sourceImage,
-				initialRendered: saved.renderedImage || null,
+				initialRender: saved.renderedImage || null,
 				name,
 			},
 		});
@@ -86,7 +86,7 @@ export default function Home() {
 							</div>
 
 							<h3>Upload your floor plan</h3>
-							<p>Supports JPG, PNG, formats up to 10MB</p>
+							<p>Supports JPG, PNG, formats up to 10 MB</p>
 						</div>
 
 						<Upload onComplete={handleUploadComplete} />
