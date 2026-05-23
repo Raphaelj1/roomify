@@ -4,8 +4,8 @@ import { ArrowRight, ArrowUpRight, Clock, Layers } from 'lucide-react';
 import Button from '../../components/ui/Button';
 import Upload from '../../components/Upload';
 import { useNavigate } from 'react-router';
-import { useRef, useState } from 'react';
-import { createProject } from '../../lib/puter.action';
+import { useEffect, useRef, useState } from 'react';
+import { createProject, getProjects } from '../../lib/puter.action';
 
 export function meta({}: Route.MetaArgs) {
 	return [{ title: 'Roomify' }, { name: 'description', content: '' }];
@@ -56,6 +56,17 @@ export default function Home() {
 			isCreatingProjectRef.current = false;
 		}
 	};
+
+	useEffect(() => {
+		const fetchProjects = async () => {
+			const items = await getProjects();
+
+			setProjects(items);
+			console.log(items);
+		};
+
+		fetchProjects();
+	}, []);
 
 	return (
 		<div className="home">
