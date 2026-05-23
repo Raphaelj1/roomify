@@ -20,7 +20,7 @@ export const createProject = async ({
 	visibility = 'private',
 }: CreateProjectParams): Promise<DesignItem | null | undefined> => {
 	if (!PUTER_WORKER_URL) {
-		console.warn('Missing VITE_PUTER_WORKER_URL; skipping history fetch');
+		console.warn('Missing VITE_PUTER_WORKER_URL; skipping history save');
 		return null;
 	}
 

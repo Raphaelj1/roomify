@@ -41,13 +41,7 @@ export default function Home() {
 
 			setProjects((prev) => [saved, ...projects]);
 
-			navigate(`visualizer/${newId}`, {
-				state: {
-					initialImage: saved.sourceImage,
-					initialRender: saved.renderedImage || null,
-					name,
-				},
-			});
+			navigate(`visualizer/${newId}`);
 
 			return true;
 		} catch (error) {
@@ -62,7 +56,6 @@ export default function Home() {
 			const items = await getProjects();
 
 			setProjects(items);
-			console.log(items);
 		};
 
 		fetchProjects();
